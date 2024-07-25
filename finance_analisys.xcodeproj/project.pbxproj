@@ -8,25 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		004D83D52C3EA994005DAC9E /* finance_analisysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83D42C3EA994005DAC9E /* finance_analisysApp.swift */; };
-		004D83D72C3EA994005DAC9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83D62C3EA994005DAC9E /* ContentView.swift */; };
+		004D83D72C3EA994005DAC9E /* SpendingLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83D62C3EA994005DAC9E /* SpendingLogView.swift */; };
 		004D83D92C3EA996005DAC9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004D83D82C3EA996005DAC9E /* Assets.xcassets */; };
 		004D83DC2C3EA996005DAC9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004D83DB2C3EA996005DAC9E /* Preview Assets.xcassets */; };
 		004D83DE2C3EA996005DAC9E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83DD2C3EA996005DAC9E /* Persistence.swift */; };
 		004D83E12C3EA996005DAC9E /* finance_analisys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 004D83DF2C3EA996005DAC9E /* finance_analisys.xcdatamodeld */; };
 		004D83ED2C416CEB005DAC9E /* Purchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83EB2C416CEB005DAC9E /* Purchase+CoreDataClass.swift */; };
 		004D83EE2C416CEB005DAC9E /* Purchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83EC2C416CEB005DAC9E /* Purchase+CoreDataProperties.swift */; };
+		004D83F02C4174CD005DAC9E /* CreatePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */; };
+		004D83F32C455D11005DAC9E /* ListObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83F22C455D11005DAC9E /* ListObjectView.swift */; };
+		004D83F52C456FD1005DAC9E /* DiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83F42C456FD1005DAC9E /* DiagrammView.swift */; };
+		004E6B1B2C4FB2A000415845 /* DiagrammViewCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		004D83D12C3EA994005DAC9E /* finance_analisys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finance_analisys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004D83D42C3EA994005DAC9E /* finance_analisysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finance_analisysApp.swift; sourceTree = "<group>"; };
-		004D83D62C3EA994005DAC9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		004D83D62C3EA994005DAC9E /* SpendingLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingLogView.swift; sourceTree = "<group>"; };
 		004D83D82C3EA996005DAC9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004D83DB2C3EA996005DAC9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		004D83DD2C3EA996005DAC9E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		004D83E02C3EA996005DAC9E /* finance_analisys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = finance_analisys.xcdatamodel; sourceTree = "<group>"; };
 		004D83EB2C416CEB005DAC9E /* Purchase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Purchase+CoreDataClass.swift"; sourceTree = "<group>"; };
 		004D83EC2C416CEB005DAC9E /* Purchase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Purchase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePurchaseView.swift; sourceTree = "<group>"; };
+		004D83F22C455D11005DAC9E /* ListObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListObjectView.swift; sourceTree = "<group>"; };
+		004D83F42C456FD1005DAC9E /* DiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagrammView.swift; sourceTree = "<group>"; };
+		004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagrammViewCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				004D83D42C3EA994005DAC9E /* finance_analisysApp.swift */,
-				004D83D62C3EA994005DAC9E /* ContentView.swift */,
+				004D83F12C455CE8005DAC9E /* Views */,
 				004D83D82C3EA996005DAC9E /* Assets.xcassets */,
 				004D83DD2C3EA996005DAC9E /* Persistence.swift */,
 				004D83DF2C3EA996005DAC9E /* finance_analisys.xcdatamodeld */,
@@ -77,6 +85,18 @@
 				004D83DB2C3EA996005DAC9E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		004D83F12C455CE8005DAC9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				004D83D62C3EA994005DAC9E /* SpendingLogView.swift */,
+				004D83F42C456FD1005DAC9E /* DiagrammView.swift */,
+				004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */,
+				004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */,
+				004D83F22C455D11005DAC9E /* ListObjectView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +170,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				004D83E12C3EA996005DAC9E /* finance_analisys.xcdatamodeld in Sources */,
+				004D83F52C456FD1005DAC9E /* DiagrammView.swift in Sources */,
+				004E6B1B2C4FB2A000415845 /* DiagrammViewCalculations.swift in Sources */,
 				004D83DE2C3EA996005DAC9E /* Persistence.swift in Sources */,
 				004D83ED2C416CEB005DAC9E /* Purchase+CoreDataClass.swift in Sources */,
 				004D83EE2C416CEB005DAC9E /* Purchase+CoreDataProperties.swift in Sources */,
-				004D83D72C3EA994005DAC9E /* ContentView.swift in Sources */,
+				004D83F02C4174CD005DAC9E /* CreatePurchaseView.swift in Sources */,
+				004D83F32C455D11005DAC9E /* ListObjectView.swift in Sources */,
+				004D83D72C3EA994005DAC9E /* SpendingLogView.swift in Sources */,
 				004D83D52C3EA994005DAC9E /* finance_analisysApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

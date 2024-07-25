@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let screen = UIScreen.main.bounds
+
 @main
 struct finance_analisysApp: App {
     let persistenceController = PersistenceController.shared

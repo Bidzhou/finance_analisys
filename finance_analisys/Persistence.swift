@@ -8,7 +8,7 @@
 import CoreData
 
 struct PersistenceController {
-    static let shared = PersistenceController()
+    static let shared = PersistenceController(inMemory: false)
 
 //    static var preview: PersistenceController = {
 //        let result = PersistenceController(inMemory: true)
@@ -32,9 +32,9 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "finance_analisys")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
+//        if inMemory {
+//            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+//        }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
