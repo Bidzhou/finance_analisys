@@ -18,7 +18,6 @@
 		004D83F02C4174CD005DAC9E /* CreatePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */; };
 		004D83F32C455D11005DAC9E /* ListObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83F22C455D11005DAC9E /* ListObjectView.swift */; };
 		004D83F52C456FD1005DAC9E /* DiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D83F42C456FD1005DAC9E /* DiagrammView.swift */; };
-		004E6B1B2C4FB2A000415845 /* DiagrammViewCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePurchaseView.swift; sourceTree = "<group>"; };
 		004D83F22C455D11005DAC9E /* ListObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListObjectView.swift; sourceTree = "<group>"; };
 		004D83F42C456FD1005DAC9E /* DiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagrammView.swift; sourceTree = "<group>"; };
-		004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagrammViewCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 			children = (
 				004D83D62C3EA994005DAC9E /* SpendingLogView.swift */,
 				004D83F42C456FD1005DAC9E /* DiagrammView.swift */,
-				004E6B1A2C4FB2A000415845 /* DiagrammViewCalculations.swift */,
 				004D83EF2C4174CC005DAC9E /* CreatePurchaseView.swift */,
 				004D83F22C455D11005DAC9E /* ListObjectView.swift */,
 			);
@@ -171,7 +168,6 @@
 			files = (
 				004D83E12C3EA996005DAC9E /* finance_analisys.xcdatamodeld in Sources */,
 				004D83F52C456FD1005DAC9E /* DiagrammView.swift in Sources */,
-				004E6B1B2C4FB2A000415845 /* DiagrammViewCalculations.swift in Sources */,
 				004D83DE2C3EA996005DAC9E /* Persistence.swift in Sources */,
 				004D83ED2C416CEB005DAC9E /* Purchase+CoreDataClass.swift in Sources */,
 				004D83EE2C416CEB005DAC9E /* Purchase+CoreDataProperties.swift in Sources */,

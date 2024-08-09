@@ -12,37 +12,51 @@ struct DiagrammView: View {
     @State private var isReverseSort = false
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Purchase.timestamp, ascending: true)]) private var purchases: FetchedResults<Purchase>
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Purchase.timestamp, ascending: false)]) private var purchasesReversed: FetchedResults<Purchase>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Purchase.store, ascending: false)]) private var purchasesByCategories: FetchedResults<Purchase>
 
     @Environment(\.dismiss) var dissmis
     @State private var selectedAngle: Int?
-
+    
 
     var body: some View {
     
-        Button {
-            withAnimation {
-                isReverseSort.toggle()
+        HStack(spacing: screen.width*0.58) {
+            Button {
+                dissmis()
+            } label: {
+                Image(systemName: "arrow.backward")
+                    .foregroundStyle(Color.white)
+                    .frame(width: 30, height: 30)
+                    .background(Color("Siren"))
+                    .clipShape(Circle())
             }
-            
-        } label: {
-            Text("reverse")
-        }
-        Button {
-            dissmis()
-        } label: {
-            Text("back")
+            Button {
+                withAnimation {
+                    isReverseSort.toggle()
+                }
+                
+            } label: {
+                Text("reverse")
+                    .padding(8)
+                    .background(Color("Siren"))
+                    .foregroundStyle(Color.white)
+                    .cornerRadius(16)
+                
+            }
+
         }
 
-        Chart(purchases, id:\.store) { purchase in
+
+        Chart(purchasesByCategories, id: \.price) { purchase in
             
             SectorMark(
-                angle: .value("store", purchase.price),
+                angle: .value("price", Int(purchase.price)),
                 innerRadius: .ratio(0.6),
-                angularInset: 0.5
+                angularInset: 0.2
                 
                 )
             .cornerRadius(5)
-           // .foregroundStyle(by: .value(Text(verbatim: purchase.store!), purchase.store!))
+            //.opacity(purchase.store == selectedItem?.store ? 1 : 0.3 )
             .foregroundStyle(by: .value("store", purchase.store!))
             
         }.chartLegend(alignment: .center, spacing: 16)
@@ -55,34 +69,32 @@ struct DiagrammView: View {
                     let sumSales = purchases.reduce(into: [String: Int]()) { partialResult, purchase in
                         partialResult[purchase.store, default: 0] += Int(purchase.price)
                     }
-                    let storeName = sumSales.max(by: {$0.value < $1.value})
+                    //let storeName = sumSales.max(by: {$0.value < $1.value})
                     var total = 0
-                    var categoryRanges = purchases.map {
+                    let categoryRanges = purchases.map {
                         let newTotal = total + Int($0.price)
                         let result = (category: $0.store,
                                       range: Int(total) ..< Int(newTotal))
                         total = newTotal
                         return result
                       }
+                    
                     var selectedItem: Purchase? {
                       guard let selectedAngle else { return nil }
                       if let selected = categoryRanges.firstIndex(where: {
                         $0.range.contains(selectedAngle)
                       }) {
-                          print("поменялся")
-                        print(selectedAngle)
+
                         return purchases[selected]
                       }
                       return nil
                     }
 
-                    Text(selectedItem?.store ?? "Categories")
+                    Text(selectedItem?.store ?? "Over all")
                       .font(.title)
-                    Text((selectedItem?.price.formatted() ?? total.formatted()) + " posts")
-                      .font(.callout)
+                    Text("\(sumSales[selectedItem?.store] ?? total)" + " Rub")
+                      
                     
-//                    Text(String(describing: (storeName?.value) ?? 0) )
-//                    Text(storeName?.key ?? "there")
                 }
                 .position(x: frame.midX, y: frame.midY)
             }

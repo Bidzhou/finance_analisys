@@ -14,6 +14,8 @@ struct CreatePurchaseView: View {
     @State private var name: String = ""
     @State private var price: Int64? = nil
     @State private var isUsePattern = false
+    @State private var isSelectDate = false
+    @State private var date = Date()
     private let purchaseTypes = ["Еда", "Транспорт", "Курение", "Алкоголь"]
     var body: some View {
         VStack {
@@ -71,14 +73,46 @@ struct CreatePurchaseView: View {
                 .background(Color("Siren_60"))
                 .cornerRadius(16)
                 .padding()
+            
+            if isSelectDate{
+                DatePicker("",
+                           selection: $date,
+                           displayedComponents: [.date])
+                    .datePickerStyle(.wheel)
+                    .frame(alignment: .center)
+                    .padding(.trailing, 20)
+            }
+            
+            
+
+            Button {
+                if isSelectDate {
+                    date = Date()
+                }
+                withAnimation {
+                    isSelectDate.toggle()
+                }
                 
+                
+            } label: {
+                //надо нормально менять переменну даты
+                if isSelectDate {
+                    Text("Сегодня")
+                } else {
+                    Text("Выбрать дату")
+                }
+                
+            }
+
+
+
             
             Button {
                 if !name.isEmpty && price != nil {
                     let newPurchase = Purchase(context: viewContext)
                     newPurchase.price = self.price!
                     newPurchase.store = self.name
-                    newPurchase.timestamp = Date()
+                    newPurchase.timestamp = date
                     do{
                         try viewContext.save()
 
@@ -86,6 +120,7 @@ struct CreatePurchaseView: View {
                         let nsError = error as NSError
                         fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                     }
+                    
                     dissmis()
                 }
             } label: {
@@ -95,7 +130,7 @@ struct CreatePurchaseView: View {
                     .padding(.horizontal, 20)
                     .background(Color("Siren"))
                     .cornerRadius(16)
-            }.padding(.top, 75)
+            }
             
         }
         

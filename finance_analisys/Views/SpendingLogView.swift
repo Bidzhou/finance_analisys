@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 import UIKit
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) public var viewContext1
 //    let context = PersistenceController.shared.container.viewContext
 //    let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 //    fetchRequest.sortDescriptors
@@ -22,35 +22,41 @@ struct ContentView: View {
         
         ZStack {
             VStack {
-                HStack(spacing: screen.width * 0.5) {
+                HStack {
                     Text("Журнал трат")
-                        .font(.system(size: 15, weight: .regular, design: .default)
+                        .font(.system(size: 20, weight: .regular, design: .default)
                                 .italic()
                                 .monospacedDigit())
                         
                         .fontWidth(.expanded)
                         
+
+                }
+                
+                HStack(spacing: screen.width * 0.5){
+                    Button {
+                        isStatisticsShowed.toggle()
+                    } label: {
+                        Text("Статистика")
+                            .padding(8)
+                            .background(Color("Siren"))
+                            .foregroundStyle(Color.white)
+                            .cornerRadius(16)
+                    }
                     Button {
                         isSheetShowing.toggle()
                     } label: {
                         Image(systemName: "plus")
+                            .foregroundStyle(Color.white)
                             .frame(width: 30, height: 30)
                             .background(Color("Siren"))
                             .clipShape(Circle())
                             
                         
                     }
+
+
                 }.frame(maxWidth: .infinity)
-                
-                HStack{
-                    Button {
-                        isStatisticsShowed.toggle()
-                    } label: {
-                        Text("Статистика")
-                    }
-
-
-                }
                 
                 List{
                     ForEach(purchases) { purchase in
@@ -60,6 +66,7 @@ struct ContentView: View {
                                     withAnimation {
                                         deleteWithButton(item: purchase)
                                     }
+                                    
                                 } label: {
                                     Text("delete")
                                 }
@@ -107,9 +114,9 @@ struct ContentView: View {
     }
     private func deleteWithButton(item: Purchase) {
         
-        viewContext.delete(item)
+        viewContext1.delete(item)
         do {
-            try viewContext.save()
+            try viewContext1.save()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -122,10 +129,10 @@ struct ContentView: View {
     }
     private func deleteItems(offsets: IndexSet) { //удаление объекта из базы данных
         withAnimation {
-            offsets.map { purchases[$0] }.forEach(viewContext.delete)
+            offsets.map { purchases[$0] }.forEach(viewContext1.delete)
 
             do {
-                try viewContext.save()
+                try viewContext1.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
